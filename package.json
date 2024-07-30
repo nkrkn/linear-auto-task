@@ -1,0 +1,27 @@
+{
+  "name": "@nkrkn/linear-auto-task",
+  "version": "0.0.1",
+  "description": "",
+  "repository": {
+    "url": ""
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest",
+    "release": "pnpm test && pnpm build && pnpx changeset publish"
+  },
+  "keywords": [],
+  "author": "Nicholas Ramkissoon",
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "^8.2.3",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.4"
+  },
+  "dependencies": {
+    "@linear/sdk": "^25.0.0"
+  }
+}
