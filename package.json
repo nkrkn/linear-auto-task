@@ -16,6 +16,7 @@
   "keywords": [],
   "author": "Nicholas Ramkissoon",
   "license": "MIT",
+  "packageManager": "^pnpm@9.4.0",
   "devDependencies": {
     "tsup": "^8.2.3",
     "typescript": "^5.5.4",
