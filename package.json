@@ -11,7 +11,7 @@
   "scripts": {
     "build": "tsup",
     "test": "vitest",
-    "release": "pnpm test && pnpm build && pnpx changeset publish"
+    "release": "pnpm test && pnpm build && pnpm changeset publish"
   },
   "keywords": [],
   "author": "Nicholas Ramkissoon",
