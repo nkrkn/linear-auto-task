@@ -15,7 +15,7 @@ interface LinearAutoTaskError extends Error {
   type: ErrorType
 }
 
-export class IssueBuilder {
+class IssueBuilder {
   issues: Issue[] = []
 
   constructor(...issues: Issue[]) {
@@ -31,3 +31,5 @@ export class IssueBuilder {
     })
   }
 }
+
+exports = { IssueBuilder }

@@ -5,11 +5,25 @@
   "repository": {
     "url": ""
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "type": "module",
+  "types": "./build/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./build/cjs/index.d.ts",
+        "default": "./build/cjs/index.js"
+      },
+      "import": {
+        "types": "./build/esm/index.d.ts",
+        "default": "./build/esm/index.js"
+      }
+    }
+  },
   "scripts": {
-    "build": "tsup",
+    "clean": "tsc --build --clean && rm -rf build",
+    "build": "pnpm clean && pnpm build:cjs && pnpm build:esm",
+    "build:cjs": "tsc --project tsconfig.cjs.json && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json",
+    "build:esm": "tsc --project tsconfig.esm.json",
     "test": "vitest",
     "release": "pnpm test && pnpm build && pnpm changeset publish"
   },
@@ -19,6 +33,7 @@
   "packageManager": "pnpm@9.4.0",
   "devDependencies": {
     "@changesets/cli": "^2.27.7",
+    "@types/node": "^22.1.0",
     "tsup": "^8.2.3",
     "typescript": "^5.5.4",
     "vitest": "^2.0.4"
