@@ -6,16 +6,16 @@
     "url": ""
   },
   "type": "module",
-  "types": "./build/esm/index.d.ts",
+  "types": "./dist/esm/index.d.ts",
   "exports": {
     ".": {
       "require": {
-        "types": "./build/cjs/index.d.ts",
-        "default": "./build/cjs/index.js"
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
       },
       "import": {
-        "types": "./build/esm/index.d.ts",
-        "default": "./build/esm/index.js"
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
       }
     }
   },

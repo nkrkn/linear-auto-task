@@ -16,7 +16,6 @@
     "tsBuildInfoFile": "node_modules/.cache/.tsbuildinfo",
     "noErrorTruncation": true,
     "skipLibCheck": true,
-    "verbatimModuleSyntax": true
   },
   "include": ["src"],
   "exclude": ["dist"]
