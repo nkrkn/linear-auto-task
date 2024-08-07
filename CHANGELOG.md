@@ -1,5 +1,11 @@
 # @nkrkn/linear-auto-task
 
+## 0.3.0
+
+### Minor Changes
+
+- 77877b0: new builds
+
 ## 0.2.1
 
 ### Patch Changes
