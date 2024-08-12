@@ -39,6 +39,7 @@
     "vitest": "^2.0.4"
   },
   "dependencies": {
-    "@linear/sdk": "^25.0.0"
+    "@linear/sdk": "^25.0.0",
+    "countries-and-timezones": "^3.6.0"
   }
 }

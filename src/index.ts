@@ -1,10 +1,20 @@
 import { type CreateIssueMutation } from "@linear/sdk";
+import { getAllTimezones } from "countries-and-timezones"
 
-type RepeatOptions = {}
-type TimeZone = {}
+type RepeatOptions = {
+  type: "daily"
+} | {
+  type: "day_of_the_week"
+  day: "Sunday" | "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday" | "Saturday"
+} | {
+  type: "day_of_the_month"
+  day: number
+}
+
+type TimeZone = keyof ReturnType<typeof getAllTimezones>
 
 export type Issue = Parameters<CreateIssueMutation["fetch"]>[0] & {
-  autoTaskId: string;
+  autoTaskName: string;
   repeatOptions: RepeatOptions;
   timezone: TimeZone;
 };
@@ -21,9 +31,12 @@ export class IssueBuilder {
   constructor(...issues: Issue[]) {
   }
 
-  addIssues(...issues: Issue[]) {}
-  
-  merge(...issueBuilders: IssueBuilder[]) {}
+  addIssues(...issues: Issue[]) {
+  }
+
+  merge(...issueBuilders: IssueBuilder[]) {
+
+  }
 
   build(): string {
     return JSON.stringify({

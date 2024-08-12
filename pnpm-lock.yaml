@@ -11,6 +11,9 @@ importers:
       '@linear/sdk':
         specifier: ^25.0.0
         version: 25.0.0
+      countries-and-timezones:
+        specifier: ^3.6.0
+        version: 3.6.0
     devDependencies:
       '@changesets/cli':
         specifier: ^2.27.7
@@ -651,6 +654,10 @@ packages:
   consola@3.2.3:
     resolution: {integrity: sha512-I5qxpzLv+sJhTVEoLYNcTW+bThDCPsit0vLNKShZx6rLtpilNpmmeTPaeqJb9ZE9dV3DGaeby6Vuhrw38WjeyQ==}
     engines: {node: ^14.18.0 || >=16.10.0}
+
+  countries-and-timezones@3.6.0:
+    resolution: {integrity: sha512-8/nHBCs1eKeQ1jnsZVGdqrLYxS8nPcfJn8PnmxdJXWRLZdXsGFR8gnVhRjatGDBjqmPm7H+FtYpBYTPWd0Eiqg==}
+    engines: {node: '>=8.x', npm: '>=5.x'}
 
   cross-spawn@5.1.0:
     resolution: {integrity: sha512-pTgQJ5KC0d2hcY8eyL1IzlBPYjTkyH72XRZPnLyKus2mBfNjQs3klqbJU2VILqZryAZUt9JOb3h/mWMy23/f5A==}
@@ -1994,6 +2001,8 @@ snapshots:
   commander@4.1.1: {}
 
   consola@3.2.3: {}
+
+  countries-and-timezones@3.6.0: {}
 
   cross-spawn@5.1.0:
     dependencies:
