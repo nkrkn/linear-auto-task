@@ -29,7 +29,7 @@ type ErrorType = "MERGE_ERROR" | "INVALID_ISSUE" | "UNKNOWN";
 
 export class LinearAutoTaskError extends Error {
   constructor(type: ErrorType, message?: string) {
-    super();
+    super(message);
   }
   type: ErrorType;
 }
@@ -54,7 +54,7 @@ export class IssueBuilder {
   }
 
   addIssues(...issues: Issue[]) {
-    this._validateUniqueAutoTaskNames();
+    this._validateUniqueAutoTaskNames(...issues);
     this.issues.push(...issues);
   }
 
