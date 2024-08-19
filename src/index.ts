@@ -1,5 +1,4 @@
 import { type CreateIssueMutation } from "@linear/sdk";
-import { getAllTimezones, getTimezone } from "countries-and-timezones";
 
 type RepeatOptions =
   | {
@@ -21,12 +20,9 @@ type RepeatOptions =
       day: number;
     };
 
-type TimeZone = keyof ReturnType<typeof getAllTimezones>;
-
 export type Issue = Parameters<CreateIssueMutation["fetch"]>[0] & {
   autoTaskName: string;
   repeatOptions: RepeatOptions;
-  timezone: TimeZone;
 };
 
 type ErrorType = "MERGE_ERROR" | "INVALID_ISSUE" | "UNKNOWN";
