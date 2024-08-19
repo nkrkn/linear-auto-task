@@ -5,7 +5,7 @@ type RepeatOptions =
       type: "daily";
     }
   | {
-      type: "day_of_the_week";
+      type: "weekly";
       day:
         | "Sunday"
         | "Monday"
@@ -16,7 +16,7 @@ type RepeatOptions =
         | "Saturday";
     }
   | {
-      type: "day_of_the_month";
+      type: "monthly";
       day: number;
     };
 
