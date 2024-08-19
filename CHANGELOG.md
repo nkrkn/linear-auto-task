@@ -1,5 +1,11 @@
 # @nkrkn/linear-auto-task
 
+## 0.4.0
+
+### Minor Changes
+
+- 2812cf5: implementations and tests
+
 ## 0.3.1
 
 ### Patch Changes
