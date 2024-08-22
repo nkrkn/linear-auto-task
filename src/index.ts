@@ -1,7 +1,13 @@
 import { type CreateIssueMutation } from "@linear/sdk";
 
+/**
+ * Configures how often to repeat creation of a task.
+ * @property type - one of ["daily", "weekly", "monthly"]
+ * @property day - If `type` is "weekly", will be a day of the week to repeat the task. If `type` is "monthly", will be a day of the month. Note: day can be any number and does not account for different number of days depending on the month.
+ */
 type RepeatOptions =
   | {
+      // Task will be created every day
       type: "daily";
     }
   | {
@@ -20,13 +26,24 @@ type RepeatOptions =
       day: number;
     };
 
+/**
+ * Linear Issue with extra properties to configure task repitition.
+ * @see {@link CreateIssueMutation} for options
+ * @property autoTaskName - must be unique, used in title for issues
+ * @property repeatOptions {@link RepeatOptions}
+ */
 export type Issue = Parameters<CreateIssueMutation["fetch"]>[0] & {
+  /** must be unique, used in title for issuesd */
   autoTaskName: string;
+  /** @see {@link RepeatOptions} */
   repeatOptions: RepeatOptions;
 };
 
 type ErrorType = "MERGE_ERROR" | "INVALID_ISSUE" | "UNKNOWN";
 
+/**
+ * Not currently used.
+ */
 export class LinearAutoTaskError extends Error {
   constructor(type: ErrorType, message?: string) {
     super(message);
@@ -34,6 +51,9 @@ export class LinearAutoTaskError extends Error {
   type: ErrorType;
 }
 
+/**
+ * Class for grouping and storing issues/tasks.
+ */
 export class IssueBuilder {
   issues: Issue[] = [];
 
@@ -65,6 +85,7 @@ export class IssueBuilder {
     }
   }
 
+  /** Returns issues as a string in JSON format meant to be consumes by {@link https://github.com/nkrkn/linear-auto-task-action GitHub action }. */
   build(): string {
     return JSON.stringify({
       issues: this.issues,
