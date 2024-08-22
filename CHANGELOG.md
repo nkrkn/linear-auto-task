@@ -1,5 +1,11 @@
 # @nkrkn/linear-auto-task
 
+## 0.5.0
+
+### Minor Changes
+
+- af9d09d: add js doc comments
+
 ## 0.4.0
 
 ### Minor Changes
