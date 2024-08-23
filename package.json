@@ -1,9 +1,9 @@
 {
   "name": "@nkrkn/linear-auto-task",
   "version": "0.5.0",
-  "description": "",
+  "description": "Create repeatable issues in Linear",
   "repository": {
-    "url": ""
+    "url": "https://github.com/nkrkn/linear-auto-task"
   },
   "type": "module",
   "types": "./dist/esm/index.d.ts",
